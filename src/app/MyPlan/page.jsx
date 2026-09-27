@@ -4,8 +4,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePlan } from '@/Component/PlanContext';
-
+import { toast } from "react-toastify";
 const MyPlanpage = () => {
+
     const {
         todayPlan,
         savedPlan,
@@ -41,12 +42,17 @@ const MyPlanpage = () => {
 
 
     const handleRemove = (id) => {
+        const exercise = exercises.find((item) => item.id === id);
+
         if (activeTab === 'today') {
             removeFromToday(id);
+            toast.info(`${exercise.name} removed from Today's Plan!`);
         } else {
             removeFromSaved(id);
+            toast.info(`${exercise.name} removed from Saved!`);
         }
     };
+
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -92,8 +98,8 @@ const MyPlanpage = () => {
                     <button
                         onClick={() => setActiveTab('today')}
                         className={`px-4 py-2 rounded-md text-xs font-semibold ${activeTab === 'today'
-                                ? 'bg-[#2B303D] text-white'
-                                : 'text-gray-400'
+                            ? 'bg-[#2B303D] text-white'
+                            : 'text-gray-400'
                             }`}
                     >
                         Today's Plan ({todayPlan.length})
@@ -102,8 +108,8 @@ const MyPlanpage = () => {
                     <button
                         onClick={() => setActiveTab('saved')}
                         className={`px-4 py-2 rounded-md text-xs font-semibold ${activeTab === 'saved'
-                                ? 'bg-[#2B303D] text-white'
-                                : 'text-gray-400'
+                            ? 'bg-[#2B303D] text-white'
+                            : 'text-gray-400'
                             }`}
                     >
                         Saved ({savedPlan.length})
@@ -199,7 +205,10 @@ const MyPlanpage = () => {
 
                                 {activeTab === 'today' && (
                                     <button
-                                        onClick={() => markAsDone(exercise.id)}
+                                        onClick={() => {
+                                            markAsDone(exercise.id);
+                                            toast.success(`${exercise.name} marked as Done!`);
+                                        }}
                                         className="bg-[#C2F800] text-black text-xs font-bold px-4 py-3 rounded-lg"
                                     >
                                         ✓ Mark as Done

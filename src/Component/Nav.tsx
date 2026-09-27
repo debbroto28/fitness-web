@@ -19,7 +19,7 @@ const { todayPlan , savedPlan } = usePlan();
     </>
 
     return (
-        <div className=' shadow-sm border-b border-gray-800'>
+        <div className='sticky top-0 z-50 bg-black shadow-sm border-b border-gray-800'>
 
         <div className="navbar  container mx-auto">
   <div className="navbar-start">
