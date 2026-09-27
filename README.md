@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fitness Web
 
-## Getting Started
+Fitness Web is a simple and beginner-friendly workout library where users can explore different exercises, view workout details, and create their own workout plan.
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+- React Toastify
+- LocalStorage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Workout Library**  
+   Users can browse different workouts and see information such as muscle groups, difficulty, duration, calories, sets, reps, and rating.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Workout Details**  
+   Users can open a workout to view its full description, equipment, instructions, and other workout information.
 
-## Learn More
+3. **Today's Plan**  
+   Users can add exercises to Today's Plan and keep track of the workouts they want to complete.
 
-To learn more about Next.js, take a look at the following resources:
+4. **Save for Later**  
+   Users can save exercises for later and easily access them from their saved workout list.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Persistent Data & Toast Notifications**  
+   Workout plans are stored in LocalStorage, so the selected exercises remain after refreshing the page. Toast notifications also show feedback when users add, save, remove, or complete a workout.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Goal
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The goal of Fitness Web is to create a simple and easy-to-use workout management website while keeping the project beginner-friendly and easy to understand.
