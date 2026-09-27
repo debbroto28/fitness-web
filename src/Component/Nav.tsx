@@ -12,9 +12,9 @@ const { todayPlan , savedPlan } = usePlan();
 
     const links = <>
     
-    <li><Link className={pathname === '/Workouts' ? 'bg-[#1A2312] text-[#C2F800] rounded-full font-semibold] transition-colors duration-200' : ' '} href="/Workouts">Workouts</Link></li>
+    <li><Link className={pathname === '/Workouts' ? 'bg-[#1A2312] text-[#C2F800] rounded-full font-semibold transition-colors duration-200' : ' '} href="/Workouts">Workouts</Link></li>
         
-        <li><Link className={pathname === '/MyPlan' ? 'bg-[#1A2312] text-[#C2F800] rounded-full font-semibold] transition-colors duration-200' : ' '} href="/MyPlan">My Plan</Link></li>
+        <li><Link className={pathname === '/MyPlan' ? 'bg-[#1A2312] text-[#C2F800] rounded-full font-semibold transition-colors duration-200' : ' '} href="/MyPlan">My Plan</Link></li>
     
     </>
 

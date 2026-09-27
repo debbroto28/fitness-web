@@ -2,15 +2,15 @@ import React from "react";
 import { PiFireSimpleFill } from "react-icons/pi";
 import { FaRegStar } from "react-icons/fa";
 import Link from "next/link";
-
-const getInfo = async () => {
-  const res = await fetch("http://localhost:3000/card.json");
-  const data = await res.json();
-  return data;
+import { Exercise } from "./PlanContext";
+import cardData from '@/data/card.json';
+const getInfo = async (): Promise<Exercise[]> => {
+  return cardData;
 };
 
-const Cards = async () => {
-  const infoData = await getInfo();
+
+const Cards = () => {
+  const infoData = cardData;
 
   return (
     <>

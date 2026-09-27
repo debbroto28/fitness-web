@@ -41,17 +41,17 @@ const MyPlanpage = () => {
     });
 
 
-    const handleRemove = (id) => {
-        const exercise = exercises.find((item) => item.id === id);
+   const handleRemove = (id) => {
+    const exercise = exercises.find((item) => item.id === id);
 
-        if (activeTab === 'today') {
-            removeFromToday(id);
-            toast.info(`${exercise.name} removed from Today's Plan!`);
-        } else {
-            removeFromSaved(id);
-            toast.info(`${exercise.name} removed from Saved!`);
-        }
-    };
+    if (activeTab === 'today') {
+        removeFromToday(id);
+        toast.success(`${exercise?.name} removed from Today's Plan`);
+    } else {
+        removeFromSaved(id);
+        toast.success(`${exercise?.name} removed from Saved`);
+    }
+};
 
 
     return (
@@ -207,7 +207,8 @@ const MyPlanpage = () => {
                                     <button
                                         onClick={() => {
                                             markAsDone(exercise.id);
-                                            toast.success(`${exercise.name} marked as Done!`);
+
+                                            toast.success(`${exercise.name} completed!`);
                                         }}
                                         className="bg-[#C2F800] text-black text-xs font-bold px-4 py-3 rounded-lg"
                                     >

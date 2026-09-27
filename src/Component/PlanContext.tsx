@@ -12,7 +12,7 @@ export interface Exercise {
   equipment: string;
   difficulty: string;
   sets: number;
-  reps: number;
+  reps: string;
   duration: number;
   caloriesBurned: number;
   rating: number;
