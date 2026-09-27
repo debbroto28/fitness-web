@@ -4,15 +4,17 @@ import React from 'react';
 import logo from '@/assets/logo.png'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { usePlan } from '@/Component/PlanContext';
 const Nav = () => {
 
 const pathname = usePathname();
+const { todayPlan , savedPlan } = usePlan();
 
     const links = <>
     
     <li><Link className={pathname === '/Workouts' ? 'bg-[#1A2312] text-[#C2F800] rounded-full font-semibold] transition-colors duration-200' : ' '} href="/Workouts">Workouts</Link></li>
         
-        <li><Link href="/MyPlan">My Plan</Link></li>
+        <li><Link className={pathname === '/MyPlan' ? 'bg-[#1A2312] text-[#C2F800] rounded-full font-semibold] transition-colors duration-200' : ' '} href="/MyPlan">My Plan</Link></li>
     
     </>
 
@@ -41,10 +43,21 @@ const pathname = usePathname();
       {links}
     </ul>
   </div>
-  <div className="navbar-end gap-4">
-    <a className="btn">Plan</a>
-    <a className="btn">Saved</a>
+ <div className="navbar-end gap-4">
+  <div>
+    Plan
+    <span className="ml-2 bg-[#C2F800] text-black rounded-full px-2 py-1 font-bold ">
+      {todayPlan.length}
+    </span>
   </div>
+
+  <div>
+    Saved
+    <span className="ml-2 bg-[#2D313B] text-white rounded-full px-2 py-1 font-bold ">
+      {savedPlan.length}
+    </span>
+  </div>
+</div>
 </div>
 </div>
     );

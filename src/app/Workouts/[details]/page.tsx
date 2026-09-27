@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import PlanActions from '@/Component/PlanActions';
 interface ExerciseDetailsProps {
   params: Promise<{
     details: string;
@@ -128,7 +128,7 @@ const ExerciseDetails = async ({params}: ExerciseDetailsProps) => {
           </span>
         </div>
 
-        {/* Rating */}
+        
         <div className="flex justify-between items-center px-4 py-3">
           <span className="text-gray-500 text-xs font-bold uppercase">
             Rating
@@ -170,13 +170,7 @@ const ExerciseDetails = async ({params}: ExerciseDetailsProps) => {
       
       <div className="flex gap-3 mt-7">
 
-        <button className="bg-[#C2F800] text-black px-5 py-3 rounded-lg font-semibold text-sm hover:bg-[#aee000] transition">
-          + Add to today's plan
-        </button>
-
-        <button className="border border-gray-700 text-gray-300 px-5 py-3 rounded-lg font-semibold text-sm hover:bg-gray-800 transition">
-          ♡ Save for later
-        </button>
+       <PlanActions exercise={exercise} />
 
       </div>
 
