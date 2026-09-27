@@ -9,7 +9,7 @@ const Banner = () => {
         <div>
           <p className='text-xs text-[#C2F800]'>WORKOUT LIBRARY</p>
           
-          <h1 className='text-4xl font-extrabold my-6'>TRAIN WITH INTENT.LOG <br />
+          <h1 className='text-5xl font-extrabold my-6'>TRAIN WITH INTENT.LOG <br />
             EVERY SET.</h1>  
             
 
@@ -22,7 +22,7 @@ const Banner = () => {
                 
         </div>
         <div>
-            <Image src={img} alt={''} />
+            <Image src={img}  alt={''} />
         </div>
         </div>
     );

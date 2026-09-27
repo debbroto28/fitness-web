@@ -1,7 +1,21 @@
+'use client'
 import Image from 'next/image';
 import React from 'react';
 import logo from '@/assets/logo.png'
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 const Nav = () => {
+
+const pathname = usePathname();
+
+    const links = <>
+    
+    <li><Link className={pathname === '/Workouts' ? 'bg-[#1A2312] text-[#C2F800] rounded-full font-semibold] transition-colors duration-200' : ' '} href="/Workouts">Workouts</Link></li>
+        
+        <li><Link href="/MyPlan">My Plan</Link></li>
+    
+    </>
+
     return (
         <div className=' shadow-sm border-b border-gray-800'>
 
@@ -14,21 +28,17 @@ const Nav = () => {
       <ul
         tabIndex={-1}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Workouts</a></li>
-        
-        <li><a>My Plan</a></li>
+        {links}
       </ul>
     </div>
     <div className="flex gap-2">
-        <Image src={logo} />
+        <Image src={logo} alt={''} />
         <p className='text-2xl font-bold'>FITLOG</p>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Workouts</a></li>
-     
-      <li><a>My Plan</a></li>
+      {links}
     </ul>
   </div>
   <div className="navbar-end gap-4">
